@@ -3,137 +3,205 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nina Naomi – Circus Artist</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
   <style>
+    /* Grundlegendes Styling */
     body {
       margin: 0;
       font-family: 'Playfair Display', serif;
-      background-color: #000;
-      color: #FFD700;
+      background-color: #121212;
+      color: #d4af37;
+      line-height: 1.6;
     }
 
     header {
-      background-color: #111;
-      padding: 1rem;
+      background-color: #1f1f1f;
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+    }
+
+    header h1 {
+      margin: 0;
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: 1.5px;
     }
 
     nav a {
-      color: #FFD700;
+      color: #d4af37;
       text-decoration: none;
-      margin: 0 1rem;
-      font-weight: bold;
+      margin-left: 1.8rem;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: color 0.3s ease;
     }
 
     nav a:hover {
+      color: #fff;
       text-decoration: underline;
     }
 
     .language-switch {
       cursor: pointer;
-      font-weight: bold;
-      border: 1px solid #FFD700;
-      padding: 0.25rem 0.5rem;
-      margin-left: 1rem;
+      border: 1.5px solid #d4af37;
+      padding: 0.3rem 0.7rem;
+      margin-left: 1.5rem;
+      border-radius: 3px;
+      font-weight: 700;
+      user-select: none;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    h1, h2 {
-      text-align: center;
-      margin: 2rem 0 1rem;
+    .language-switch:hover {
+      background-color: #d4af37;
+      color: #121212;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto 4rem;
+      padding: 0 1.5rem;
     }
 
     section {
-      max-width: 800px;
-      margin: auto;
-      padding: 1rem;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid #d4af37aa;
+      padding-bottom: 2rem;
     }
 
+    section:last-child {
+      border: none;
+      padding-bottom: 0;
+    }
+
+    h2 {
+      font-weight: 700;
+      font-size: 2rem;
+      border-bottom: 2px solid #d4af37;
+      padding-bottom: 0.3rem;
+      margin-bottom: 1.2rem;
+      letter-spacing: 1.2px;
+    }
+
+    ul {
+      list-style-type: disc;
+      margin-left: 1.4rem;
+    }
+
+    ul li {
+      margin-bottom: 0.8rem;
+      font-weight: 500;
+      font-size: 1.1rem;
+    }
+
+    p {
+      font-weight: 500;
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+    }
+
+    a {
+      color: #d4af37;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Logo */
     .logo {
       display: block;
-      margin: 1rem auto;
-      max-height: 100px;
+      max-height: 120px;
+      margin: 1.5rem auto 2rem;
+      filter: drop-shadow(0 0 4px #d4af37);
     }
 
+    /* Footer */
     footer {
-      background-color: #111;
       text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
+      padding: 1.5rem 0;
+      background-color: #1f1f1f;
+      color: #d4af37cc;
+      font-size: 0.9rem;
+      letter-spacing: 0.8px;
+      user-select: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        margin-top: 0.6rem;
+      }
+
+      nav a {
+        margin-left: 0;
+        margin-right: 1.3rem;
+      }
     }
   </style>
 </head>
 
 <body>
   <header>
-    <div><strong>Nina Naomi – Circus Artist</strong></div>
+    <h1>Nina Naomi – Circus Artist</h1>
     <nav>
-      <a href="#acts">Angebot</a>
-      <a href="#references">Referenzen</a>
-      <a href="#reviews">Bewertungen</a>
-      <a href="#gallery">Galerie</a>
-      <a href="#contact">Kontakt</a>
+      <a href="#angebot">Angebot</a>
+      <a href="#referenzen">Referenzen</a>
+      <a href="#bewertungen">Bewertungen</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#kontakt">Kontakt</a>
       <span class="language-switch" onclick="switchLanguage()">EN</span>
     </nav>
   </header>
 
-  <img src="logo.png" alt="Logo" class="logo">
+  <!-- Logo - ersetze "logo.png" durch deinen Bildnamen -->
+  <img src="logo.png" alt="Nina Naomi Logo" class="logo" />
 
-  <section id="acts">
-    <h2>Angebot</h2>
-    <ul>
-      <li><strong>Feuershow (Solo oder Duo)</strong> – Magisch & fesselnd, individuell auf das Event abgestimmt. Special Effects und Pyrotechnik möglich. Auch buchbar für Videodrehs oder Fotoshootings.</li>
-      <li><strong>LED-Show (Solo oder Duo)</strong> – Modern, individuell programmierbar inkl. Logoeinbindung</li>
-      <li><strong>Walkacts</strong> – Elegant oder verspielt, inkl. Meet & Greet</li>
-      <li><strong>Vertikaltuch & Seil</strong> – Poetisch & kraftvoll, 6 m Mindesthöhe, benötigt Deckenbefestigung oder Stahlträger/Balken (mobiles Gestell kann gestellt werden)</li>
-      <li><strong>Luftring (Solo / Duo)</strong> – Elegant & dynamisch, benötigt 3–4 m Höhe</li>
-    </ul>
-  </section>
+  <main>
+    <section id="angebot">
+      <h2>Angebot</h2>
+      <ul>
+        <li><strong>Feuershow (Solo oder Duo):</strong> Magisch & fesselnd, individuell auf das Event abgestimmt, Special Effects & Pyrotechnik möglich. Auch buchbar für Videodrehs und Fotoshootings.</li>
+        <li><strong>LED-Show (Solo oder Duo):</strong> Modern, individuell programmierbar inkl. Logoeinbindung.</li>
+        <li><strong>Walkacts:</strong> Elegant oder verspielt, inkl. Meet & Greet.</li>
+        <li><strong>Vertikaltuch & Seil:</strong> Poetisch & kraftvoll, 6 m Mindesthöhe, benötigt Deckenbefestigung oder Stahlträger/Balken (mobiles Gestell kann gestellt werden).</li>
+        <li><strong>Luftring (Solo / Duo):</strong> Elegant & dynamisch, benötigt 3–4 m Höhe.</li>
+      </ul>
+    </section>
 
-  <section id="references">
-    <h2>Referenzen</h2>
-    <p><strong>Luftakrobatik:</strong><br>
-      Zircus Abrax Kadabrax Hamburg 2021, Roztocfestival Tschechien 2021, Biedermeierstrand Hayna Leipzig 2022, Tapetenwerk Leipzig 2022, Central Kabarett Leipzig 2022, Glasfabrik Leipzig 2022, VariUTé Leipzig 2022, Wilde Möhre Festival 2022, Bucht der Träumer Festival 2022, Mermejita Circus Mexico 2024, Starry Mountain Guatemala 2024, Bob&Skeleton WM Winterberg 2024, Parookaville Festival 2024/2025, Welcome to my Garden hamm Festival 2024, Sagenhaft Wintervarieté Großröhrsdorf 2025, Kunstkraftwerk Leipzig 2025</p>
+    <section id="referenzen">
+      <h2>Referenzen</h2>
+      <p><strong>Luftakrobatik:</strong><br />
+        Zircus Abrax Kadabrax Hamburg 2021, Roztocfestival Tschechien 2021, Biedermeierstrand Hayna Leipzig 2022, Tapetenwerk Leipzig 2022, Central Kabarett Leipzig 2022, Glasfabrik Leipzig 2022, VariUTé Leipzig 2022, Wilde Möhre Festival 2022, Bucht der Träumer Festival 2022, Mermejita Circus Mexico 2024, Starry Mountain Guatemala 2024, Bob&Skeleton WM Winterberg 2024, Parookaville Festival 2024/2025, Welcome to my Garden hamm Festival 2024, Sagenhaft Wintervarieté Großröhrsdorf 2025, Kunstkraftwerk Leipzig 2025
+      </p>
 
-    <p><strong>Feuershows:</strong><br>
-      Samsara Festival 2018, Pushkar Camel Fair 2018, Ozora Festival 2019, Anthropos Festival 2019, Videodreh Die Wilden Reiter 2021, Kulturbühne am Bodethal 2022, Straßentheater Kulturraum Festival Suhl 2024, Bob&Skeleton WM Winterberg 2024, MDR Osterfeuern Plauen 2024, Sputnik Spring Break Festival 2024, Parookaville Festival 2024/2025, Welcome to my Garden Hamm Festival 2024, RAW Weihnachtsmarkt Berlin 2024, Paradise Circus Thailand 2025</p>
+      <p><strong>Feuershows:</strong><br />
+        Samsara Festival 2018, Pushkar Camel Fair 2018, Ozora Festival 2019, Anthropos Festival 2019, Videodreh Die Wilden Reiter 2021, Kulturbühne am Bodethal 2022, Straßentheater Kulturraum Festival Suhl 2024, Bob&Skeleton WM Winterberg 2024, MDR Osterfeuern Plauen 2024, Sputnik Spring Break Festival 2024, Parookaville Festival 2024/2025, Welcome to my Garden Hamm Festival 2024, RAW Weihnachtsmarkt Berlin 2024, Paradise Circus Thailand 2025
+      </p>
 
-    <p><strong>LED Shows / Daytime / Walkacts:</strong><br>
-      Anthropos Festival 2019, Psyfi Festival 2019, Fuego a la Isla Festival 2023/2024, Ad Hoc Arena Jena 2023, Bob&Skeleton WM Winterberg 2024, MDR Osterfeuern Plauen 2024, Lichtblütenfestival Altmark 2024, UEFA EM Leipzig 2024, Check24 Westhafen Leipzig 2025</p>
-  </section>
+      <p><strong>LED Shows / Daytime / Walkacts:</strong><br />
+        Anthropos Festival 2019, Psyfi Festival 2019, Fuego a la Isla Festival 2023/2024, Ad Hoc Arena Jena 2023, Bob&Skeleton WM Winterberg 2024, MDR Osterfeuern Plauen 2024, Lichtblütenfestival Altmark 2024, UEFA EM Leipzig 2024, Check24 Westhafen Leipzig 2025
+      </p>
+    </section>
 
-  <section id="reviews">
-    <h2>Bewertungen</h2>
-    <p><strong>Die Flugträumer:</strong> Höchste Professionalität, vielseitige Shows – sehr zu empfehlen!</p>
-    <p><strong>Theater of Fire:</strong> Freundlich, unkompliziert & hoch professionell</p>
-    <p><strong>Freaks on Fire:</strong> Mitreißend, kreativ & individuell. Zuverlässig & professionell – sehr empfehlenswert.</p>
-    <p><strong>Aerial Circus Studio:</strong> Fachlich kompetent, empathisch & professionell. Klare Empfehlung 🫶</p>
-    <p><strong>Reha Aktiv 2000:</strong> Fantastische Artistin – Talent, Hingabe & Freude. Jederzeit wieder!</p>
-  </section>
-
-  <section id="gallery">
-    <h2>Galerie</h2>
-    <p>Bilder und Videos folgen bald…</p>
-  </section>
-
-  <section id="contact">
-    <h2>Kontakt</h2>
-    <p>E-Mail: <a href="mailto:nina.naomi95@gmail.com" style="color:#FFD700;">nina.naomi95@gmail.com</a></p>
-    <p>YouTube: <a href="https://www.youtube.com/@ninanaomi7862" target="_blank" style="color:#FFD700;">@ninanaomi7862</a></p>
-  </section>
-
-  <footer>
-    © 2025 Nina Naomi – All rights reserved.
-  </footer>
-
-  <script>
-    function switchLanguage() {
-      alert('Die englische Version wird bald hinzugefügt!');
-    }
-  </script>
-</body>
-
-</html>
+    <section id="bewertungen">
+      <h2>Bewertungen</h2>
+      <p><strong>Die Flugträumer:</strong> Höchste Professionalität, vielseitige Shows – sehr zu empfehlen!</p>
+      <p><strong>Theater of Fire:</strong> Freundlich, unkompliziert & hoch professionell</p>
+      <p><strong>Freaks on Fire:</strong> Mitreißend, kreativ & individuell. Zuverlässig & professionell – sehr empfehlenswert.</p>
+      <p><strong>Aerial Circus Studio:</strong> Fachlich kompetent, empathisch & professionell. Klare Empfehlung 🫶</p>
+      <p><strong>Reha Aktiv 2000:</strong> Fantast
